@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="/webjars/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/webjars/jquery/3.4.1/jquery.min.js"></script>
 <meta charset="ISO-8859-1">
+<link rel="stylesheet" type = "text/css" href="css/style.css"/>
 <title>movies</title>
 </head>
 <body>
 
-<h2>List of Movies</h2>
-<table>
-<tr>
-<td>Title</td>
-<td>Year</td>
-<td>IMDB</td>
-</tr>
+<div class = "container">
+	<h2>List of Movies</h2>
+	<table class = "table table-stripped">
+	<tr>
+	<td>Title</td>
+	<td>Year</td>
+	<td>Category</td>
+	<td>IMDB</td>
+	</tr>
+	
+	<tr th:each = "movie: ${movies}">
+		<td th:text = "${movie.title}">Title</td>
+		<td th:text = "${movie.year}">Year</td>
+		<td th:text = "${movie.category}">Year</td>
+		<td th:text = "${movie.imdb}">IMDB</td>
+	</tr>
+	
+	</table>
+</div>
 
-<tr th:each = "movie: ${movies}">
-	<td th:text = "${movie.title}">Title</td>
-	<td th:text = "${movie.year}">Year</td>
-	<td th:text = "${movie.imdb}">IMDB</td>
-</tr>
-
-</table>
 
 </body>
 </html>

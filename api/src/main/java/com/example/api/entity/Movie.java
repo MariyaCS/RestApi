@@ -24,7 +24,7 @@ public class Movie {
 	@Column(name="year")
 	private int year;
 	
-	@JsonIgnore
+
 	@Column(name="category")
 	private String category;
 	
